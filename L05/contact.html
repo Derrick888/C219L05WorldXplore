@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldXplore</title>
+    <link rel="stylesheet"  type="text/css" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="tailus ui html-vite and tailwindcss 3.1 boilerplate" />
+</head>
+<body>
+    <nav>
+        <img src="Exercise1.svg" alt="World Xplore" width="100" height="100">
+        <ul class="navItems">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Package Tours</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Seoul City</a></li>
+                    <li><a href="#">Jeju Island</a></li>
+                    <li><a href="#">Gyeongju Tour</a></li>
+                </ul>
+            </li>  
+            <li><a href="#">Rediscover Singapore</a></li>
+            <li><a href="cruise.html">Cruises</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <button class="hamburger-menu">&#9776;</button>
+    </nav>
+    
+
+    <section class="contact">
+        <div class="contact-container">
+            <h1 class="section-title">Contact</h1>
+            <form action="#">
+                <input type="text" name="name" id="name" placeholder="name"><br>
+                <input type="email" name="email" id="email" placeholder="email"><br>
+                <input type="password" name="number" id="number" placeholder="phone number"><br>
+                <input type="submit" value="submit">
+            </form>    
+        </div>
+    </section>
+
+
+<!-- jQuery CDN (if not already included) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Toggle navItems visibility on hamburger menu click
+        $(".hamburger-menu").click(function() {
+            $(".navItems").slideToggle(); // Toggle visibility of navItems
+        });
+
+        // Show navItems in one row on larger screens when the window is resized
+        $(window).resize(function() {
+            if ($(window).width() > 768) { // Check if the window size is larger than 768px
+                $(".navItems").css('display', ''); // Reset the style to default
+
+                // Check if the navItems are hidden (small screen) and change to flex display for larger screens
+                if ($(".navItems").css('display') === 'none') {
+                    $(".navItems").css('display', 'flex'); // Show navItems in one row for larger screens
+                }
+            }
+        });
+    });
+</script>
+    
+  </body>
+  </html>

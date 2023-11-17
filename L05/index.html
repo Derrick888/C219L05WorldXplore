@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldXplore</title>
+    <link rel="stylesheet"  type="text/css" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="tailus ui html-vite and tailwindcss 3.1 boilerplate" />
+</head>
+<body>
+    <nav>
+        <img src="Exercise1.svg" alt="World Xplore" width="100" height="100">
+        <ul class="navItems">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Package Tours</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Seoul City</a></li>
+                    <li><a href="#">Jeju Island</a></li>
+                    <li><a href="#">Gyeongju Tour</a></li>
+                </ul>
+            </li>  
+            <li><a href="#">Rediscover Singapore</a></li>
+            <li><a href="cruise.html">Cruises</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <button class="hamburger-menu">&#9776;</button>
+    </nav>
+    
+    
+    <!-- <div class="video-container">
+        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+            <source src="videos/pexels-kyungsoo-hong-14259065 (1440p).mp4" type="video/mp4">
+        </video>
+    </div> -->
+
+    <div class="background-container">
+        <div class="video-container">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                <source src="videos/pexels-kyungsoo-hong-14259065 (1440p).mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="image-container">
+            <!-- Place your image source here -->
+            <img src="photos/images.jpg" alt="image">
+        </div>
+    </div>
+
+    <section class="article-section">
+        <article>
+            <img src="photos/pexels-pixabay-373290.jpg" alt="photos" width="450" height="200">
+            <h2>Myeongdong</h2>
+            <p>Myeongdong, a vibrant district nestled in the heart of Seoul, South Korea, is a bustling epicenter of modern culture and commerce. 
+                This dynamic area is celebrated for its blend of high-end fashion boutiques, innovative cosmetics shops, and a diverse array of delectable street food stalls. 
+                The streets come alive with a colorful fusion of local and international trends, attracting both fashion-forward youth and enthusiastic tourists. 
+                Amidst the neon lights and towering buildings, Myeongdong exudes an infectious energy, offering an exciting mix of shopping, dining, 
+                and entertainment, making it a must-visit destination for those seeking the pulse of contemporary Seoul.</p>
+        </article>
+
+        <article>
+            <img src="photos/pexels-6312123.jpg" alt="photos" width="450" height="200">
+            <h2>Gyeongbokgung Palace</h2>
+            <p>Gyeongbokgung Palace, nestled in the heart of Seoul, South Korea, stands as a revered historical gem. 
+                Constructed in 1395, this grand structure served as the primary royal residence during the Joseon Dynasty.
+                The palace boasts an impressive architectural design, characterized by its ornate gates and striking pavilions set against the backdrop of the modern city.
+                Visitors are captivated by the majesty of the royal halls, expansive courtyards, and meticulously maintained gardens, each echoing centuries of Korean heritage.
+                The experience is further enriched by the mesmerizing Changing of the Guard ceremony, offering a glimpse into the country's rich cultural traditions.
+                Gyeongbokgung Palace remains a cherished destination, inviting travelers to step back in time and immerse themselves in the splendor of Korea's regal past.</p>
+        </article>
+
+        <article>
+            <img src="photos/pexels-marius-mann-1637776.jpg" alt="photos" width="450" height="200">
+            <h2>Seoul Tower</h2>
+            <p>Seoul Tower, a landmark perched atop Namsan Mountain in the heart of South Korea's capital city, offers breathtaking panoramic views of Seoul. 
+                Its iconic structure, visible from various vantage points throughout the city, draws locals and tourists alike to its heights. Visitors can ascend via a scenic cable car or a leisurely hike to reach the tower's observation decks, which provide an unmatched vista of the sprawling urban landscape. The tower, aglow with colorful lights in the evening, stands as a symbol of Seoul's modernity and offers an unforgettable experience, whether during the day to appreciate the city's vastness or at night, when the skyline shimmers under the night sky.</p>
+        </article>
+    </section>
+
+
+
+
+<!-- jQuery CDN (if not already included) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Toggle navItems visibility on hamburger menu click
+        $(".hamburger-menu").click(function() {
+            $(".navItems").slideToggle(); // Toggle visibility of navItems
+        });
+
+        // Show navItems in one row on larger screens when the window is resized
+        $(window).resize(function() {
+            if ($(window).width() > 768) { // Check if the window size is larger than 768px
+                $(".navItems").css('display', ''); // Reset the style to default
+
+                // Check if the navItems are hidden (small screen) and change to flex display for larger screens
+                if ($(".navItems").css('display') === 'none') {
+                    $(".navItems").css('display', 'flex'); // Show navItems in one row for larger screens
+                }
+            }
+        });
+    });
+</script>
+    
+    
+    
+    
+
+</body>
+</html>
+

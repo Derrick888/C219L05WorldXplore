@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+/* :root{
+    --first-color:#2e2e41;
+    --second-color:#5b85ff;
+    --third-color:#434354;
+    --text-color:#fff;
+
+    --box-shadow: 0 5px 25px rgb(2,2,2,0.1);
+    --text-shadow: 0 5px 25px rgb(2,2,2,0.1);
+} */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display',serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+    z-index: 111;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 25px;
+    line-height: 80px;
+    padding-right: 10px;
+    background-color: black;
+}
+
+nav img {
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+nav img:hover {
+    transform: rotate(360deg); /* Rotate the logo 360 degrees on hover */
+}
+
+
+/* Styles for the hamburger menu icon */
+.hamburger-menu {
+    display: none; /* Hide the hamburger icon by default */
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+/* Media query for smaller screens (e.g., mobile) */
+@media screen and (max-width: 768px) {
+    .navItems {
+        display: none; /* Hide the navItems on smaller screens */
+        flex-direction: column; /* Change flex direction for mobile view */
+    }
+
+    .hamburger-menu {
+        display: block; /* Display the hamburger icon on smaller screens */
+    }
+
+    /* Show navItems as a list for hamburger menu */
+    .navItems li {
+        display: block;
+        margin-bottom: 10px; /* Add spacing between list items */
+    }
+
+    /* Hide dropdown-content initially */
+    .dropdown-content {
+        display: none;
+    }
+
+    /* Show navItems as a scrollable list for hamburger menu */
+    .navItems {
+        display: none; /* Hide the navItems on smaller screens */
+        flex-direction: column; /* Change flex direction for mobile view */
+        max-height: 300px; /* Set a maximum height for the scrollable menu */
+        overflow-y: auto; /* Enable vertical scrolling if necessary */
+    }
+
+    /* Style for list items in hamburger menu */
+    .navItems li {
+        display: block;
+        margin-bottom: 10px; /* Add spacing between list items */
+    }
+
+    /* Hide dropdown-content initially */
+    .dropdown-content {
+        display: none;
+    }
+
+}
+
+
+
+/* Show navItems on larger screens */
+@media screen and (min-width: 769px) {
+    .navItems {
+        display: flex; /* Show the navItems on larger screens */
+        /* Add any other necessary styles */
+    }
+}
+
+
+
+
+
+.navItems li {
+    margin-right: 20px;
+}
+
+.navItems li a {
+    text-decoration: none;
+    color: #fff; /* Link text color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    font-size: 25px;
+    
+}
+
+.navItems li.current-page a {
+    color: #5b85ff; /* Adjust to your desired color */
+}
+
+/* Add hover effect */
+.navItems li a:hover {
+    color: #5b85ff; /* Adjust to your desired hover color */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    min-width: 180px;
+    z-index: 1;
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    width: 180px;
+}
+
+
+
+
+.background-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-container video, .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Add this CSS for responsive display */
+@media only screen and (max-width: 768px) {
+    .video-container {
+        display: none; /* Hide video container on smaller screens */
+    }
+
+    .image-container {
+        display: block; /* Show image container on smaller screens */
+        width: 100%;
+        height:100%;
+    }
+}
+
+
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.text-overlay h1 {
+    font-size: 10px;
+    margin-bottom: 0.5px;
+}
+
+.text-overlay p {
+    font-size: 1.5px;
+}
+
+.article-section {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 230px;
+    z-index: 1;
+    width: 80%; /* Adjust the width as needed */
+}
+
+article {
+    flex: 0 0 30%; /* Adjust the flex properties to control the width of the articles */
+    margin: 0 20px; /* Adjust the margin to create space between the articles */
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white; 
+
+}
+
+article img {
+    transition: transform 0.3s ease; /* Smooth transition for the effect */
+}
+
+article img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Add media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .article-section {
+        flex-direction: column; /* Change flex-direction to column for smaller screens */
+        align-items: center; /* Center articles in one column */
+        width: 70%; /* Make it full width on smaller screens */
+        top: 120%;
+    }
+
+    article {
+        flex: 0 0 60%; /* Adjust the width of the articles for smaller screens */
+        margin: 20px 0; /* Add bottom margin for better spacing */
+    }
+
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cruise-section {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 230px;
+    z-index: 1;
+    width: 80%; /* Adjust the width as needed */
+}
+
+cruise {
+    flex: 0 0 30%; /* Adjust the flex properties to control the width of the articles */
+    margin: 0 20px; /* Adjust the margin to create space between the articles */
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white; 
+
+}
+
+cruise img {
+    transition: transform 0.3s ease; /* Smooth transition for the effect */
+}
+
+cruise img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Add media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .cruise-section {
+        flex-direction: column; /* Change flex-direction to column for smaller screens */
+        align-items: center; /* Center articles in one column */
+        width: 70%; /* Make it full width on smaller screens */
+        top: 110%;
+    }
+
+    cruise {
+        flex: 0 0 60%; /* Adjust the width of the articles for smaller screens */
+        margin: 30px 0; /* Add bottom margin for better spacing */
+    }
+}
+
+
+
+/* contact page */
+.contact{
+    position: relative;
+    height: 100vh;
+    opacity: 0.8;
+    filter: brightness(1.2);
+    filter: contrast(1.5);
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.contact-container{
+    margin: 50px auto;
+    background-color: #47b1de;
+    padding: 30px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+}
+
+form{
+    padding: 8px;
+    margin: auto;
+    text-align: center;
+}
+
+.header{
+    font-size: 60px;
+
+}
+
+form input{
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: #262626;
+    color: #fff;
+}
+
+form input[type="submit"]{
+    background-color: #824B0D;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
+}
+
+form input[type="submit"]:hover{
+    background-color: rgb(83, 83, 83);
+    color: #fff;
+}
+
+

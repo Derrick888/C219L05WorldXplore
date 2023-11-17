@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldXplore</title>
+    <link rel="stylesheet"  type="text/css" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="tailus ui html-vite and tailwindcss 3.1 boilerplate" />
+</head>
+<body>
+    <nav>
+        <img src="Exercise1.svg" alt="World Xplore" width="100" height="100">
+        <ul class="navItems">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Package Tours</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Seoul City</a></li>
+                    <li><a href="#">Jeju Island</a></li>
+                    <li><a href="#">Gyeongju Tour</a></li>
+                </ul>
+            </li>  
+            <li><a href="#">Rediscover Singapore</a></li>
+            <li><a href="cruise.html">Cruises</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <button class="hamburger-menu">&#9776;</button>
+    </nav>
+
+        <div class="image-container">
+            <!-- Place your image source here -->
+            <img src="photos/istockphoto.jpg" alt="image">
+        </div>
+      
+       <section class="cruise-section">
+        <cruise>
+            <img src="photos/pexels-pixabay-144237.jpg" alt="photos" width="450" height="200">
+            <h2>Cruise to Seoul, Korea</h2>
+            <p>Embark on a captivating cruise to Seoul, Korea, where modernity seamlessly blends with rich traditions. 
+               Sail into the bustling port city, surrounded by a striking skyline of futuristic skyscrapers. Explore the vibrant neighborhoods, 
+               from the historic palaces of Gyeongbokgung to the trendy shops of Gangnam.</p>
+        </cruise>
+
+        <cruise>
+            <img src="photos/pexels-matthew-barra-813011.jpg" alt="photos" width="450" height="200">
+            <h2>Cruise to Bali</h2>
+            <p>Embark on a captivating cruise to Bali, Indonesia, where paradise awaits at every port. 
+                Sail into the azure waters surrounding this tropical gem, with its iconic rice terraces, lush landscapes, and pristine beaches. 
+                Explore the vibrant culture of Bali through visits to sacred temples like Tanah Lot and Uluwatu, 
+                and witness traditional dance performances against stunning sunset backdrops.</p>
+        </cruise>
+
+        <cruise>
+            <img src="photos/pexels-pixabay-260584.jpg" alt="photos" width="450" height="200">
+            <h2>Cruise to Genting</h2>
+            <p>Embark on an exhilarating cruise to Genting, a highland resort destination in Malaysia known for its vibrant entertainment, 
+                luxurious accommodations, and cool mountain climate. Cruise into the nearby port, nestled amidst lush greenery, 
+                and ascend to the Genting Highlands for a world of excitement.</p>
+        </cruise>
+    </section>
+
+    
+
+    <!-- jQuery CDN (if not already included) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Toggle navItems visibility on hamburger menu click
+        $(".hamburger-menu").click(function() {
+            $(".navItems").slideToggle(); // Toggle visibility of navItems
+        });
+
+        // Show navItems in one row on larger screens when the window is resized
+        $(window).resize(function() {
+            if ($(window).width() > 768) { // Check if the window size is larger than 768px
+                $(".navItems").css('display', ''); // Reset the style to default
+
+                // Check if the navItems are hidden (small screen) and change to flex display for larger screens
+                if ($(".navItems").css('display') === 'none') {
+                    $(".navItems").css('display', 'flex'); // Show navItems in one row for larger screens
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
